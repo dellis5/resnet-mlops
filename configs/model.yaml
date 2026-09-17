@@ -1,4 +1,4 @@
 arch: resnet18          # resnet18 | resnet34 | resnet50
-num_classes: 10
+num_classes: 37
 pretrained: true
 freeze_backbone: false
