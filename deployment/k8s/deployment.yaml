@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: resnet-inference
+  labels:
+    app: resnet-inference
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: resnet-inference
+  template:
+    metadata:
+      labels:
+        app: resnet-inference
+    spec:
+      containers:
+        - name: resnet-inference
+          image: your-registry/resnet-inference:latest
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8080
+            initialDelaySeconds: 15
+            periodSeconds: 20
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "512Mi"
+            limits:
+              cpu: "1"
+              memory: "1Gi"

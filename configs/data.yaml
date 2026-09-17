@@ -1,0 +1,7 @@
+raw_dir: data/raw
+processed_dir: data/processed
+image_size: 224
+val_split: 0.15
+test_split: 0.15
+seed: 42
+num_workers: 4

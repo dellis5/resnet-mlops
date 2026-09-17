@@ -1,0 +1,9 @@
+services:
+  inference:
+    build:
+      context: ..
+      dockerfile: deployment/docker/Dockerfile.serve
+    ports:
+      - "8080:8080"
+    volumes:
+      - ../models/registry:/app/models/registry:ro

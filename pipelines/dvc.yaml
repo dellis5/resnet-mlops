@@ -1,0 +1,34 @@
+stages:
+  preprocess:
+    cmd: python -m src.data.preprocess --config configs/data.yaml
+    deps:
+      - src/data/preprocess.py
+      - data/raw
+    params:
+      - data.image_size
+      - data.val_split
+      - data.test_split
+      - data.seed
+    outs:
+      - data/processed
+
+  train:
+    cmd: python -m src.training.train
+    deps:
+      - src/training/train.py
+      - src/training/engine.py
+      - src/data/dataset.py
+      - data/processed
+    params:
+      - model.arch
+      - model.num_classes
+      - model.pretrained
+      - train.epochs
+      - train.batch_size
+      - train.lr
+      - train.optimizer
+    outs:
+      - models/checkpoints/best_model.pt
+    metrics:
+      - metrics.json:
+          cache: false

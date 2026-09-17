@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.venv/
+venv/
+.env
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+*.log
+
+# DVC-tracked directories: only their .dvc pointer files are committed to Git
+/data/raw
+/data/processed
+/models/checkpoints
+/models/registry

@@ -1,0 +1,12 @@
+torch>=2.2
+torchvision>=0.17
+pyyaml>=6.0
+numpy>=1.26
+pillow>=10.0
+scikit-learn>=1.4
+fastapi>=0.110
+uvicorn[standard]>=0.29
+python-multipart>=0.0.9
+tqdm>=4.66
+pytest>=8.0
+dvc[s3]>=3.50

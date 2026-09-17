@@ -1,0 +1,18 @@
+# Tracked by `dvc repro` / `dvc metrics` / `dvc params diff` to correlate
+# a given metric with the exact hyperparameters that produced it.
+data:
+  image_size: 224
+  val_split: 0.15
+  test_split: 0.15
+  seed: 42
+
+model:
+  arch: resnet18
+  num_classes: 10
+  pretrained: true
+
+train:
+  epochs: 20
+  batch_size: 32
+  lr: 0.001
+  optimizer: adam
