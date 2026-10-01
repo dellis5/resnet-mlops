@@ -1,3 +1,13 @@
+WHERE TO ACCESS:
+
+the whole project lives at C:\Users\danie\resnet-mlops; the actual dataset/model binary files are tracked by DVC and physically stored at C:\Users\danie\dvc-storage.
+
+The readme.txt covers:
+
+Exact paths to every key file (code, configs, data, trained model)
+Step-by-step commands for: classifying a photo, running the web API, retraining, running tests, and saving new data/model versions with DVC+Git
+A quick-reference cheat sheet at the bottom
+
 # resnet-mlops
 
 End-to-end MLOps pipeline for a ResNet-based image classifier: data versioning (DVC),
